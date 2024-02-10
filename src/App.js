@@ -4,11 +4,12 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <div className="DynamicTreeMenu">
-        <DynamicTreeMenu />
-      </div>
-    </div>
+    <DynamicTreeMenu />
+    // <div className="App">
+    //   <div className="DynamicTreeMenu">
+
+    //   </div>
+    // </div>
   );
 }
 
