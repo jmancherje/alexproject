@@ -4,6 +4,7 @@ import "./dynamictreemenu.css";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import AlbumIcon from "@mui/icons-material/Album";
+import SelectionModal from "./SelectionModal";
 import { TreeView } from "@mui/x-tree-view/TreeView";
 import { TreeItem } from "@mui/x-tree-view/TreeItem";
 
@@ -52,7 +53,11 @@ const dynamicTree = {
 
 const DynamicTreeMenu = () => {
   const [clickedItemLabel, setClickedItemLabel] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
+
   const handleItemClick = (label) => {
+    // I am disabling the modal because I need clarification on the product requirement for step #2
+    // setModalOpen(true);
     setClickedItemLabel(label);
   };
 
@@ -84,11 +89,11 @@ const DynamicTreeMenu = () => {
           </div> */}
         </Col>
       </Row>
-      <Row>
-        <Col lg={12} className="bg-danger">
-          {clickedItemLabel && <p>You are viewing: {clickedItemLabel}</p>}
-        </Col>
-      </Row>
+      <SelectionModal
+        open={modalOpen}
+        handleClose={() => setModalOpen(false)}
+        selectedItemLabel={clickedItemLabel}
+      />
     </Fragment>
   );
 };
