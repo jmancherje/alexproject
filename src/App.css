@@ -1,7 +1,10 @@
 .App {
-  text-align: center;
+  display: flex;
 }
-
+.DynamicTreeMenu {
+  margin-right: auto;
+  width: 300px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
